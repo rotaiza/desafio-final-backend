@@ -24,7 +24,7 @@ class CartManager {
             return cart;
         } catch (error) {
             console.log("Error retrieving the cart", error);
-            throw error;
+            //throw error;
         }
     }
 

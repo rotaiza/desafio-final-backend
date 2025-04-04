@@ -1,5 +1,191 @@
 {{!-- No necesitas el DOCTYPE, html, head o body aquí --}}
-<h1 class="tipografia">Guitar Store</h1>
+<style>
+  /* Modern styling for Guitar Store */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #2da1cf;
+    color: #212529;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  .tipografia {
+    font-size: 2.5rem;
+    color: #312494;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(108, 92, 231, 0), rgba(108, 92, 231, 0.75), rgba(108, 92, 231, 0));
+    margin: 20px 0;
+  }
+  
+  /* Navigation buttons styling */
+  .memin01 {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .button-container01 {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .button-wrapper01 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .main-button01 {
+    background-color: #6c5ce7;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-button01:hover {
+    background-color: #5649c0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .options01 {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    list-style-type: none;
+    margin-top: 5px;
+  }
+  
+  .button-wrapper01:hover .options01 {
+    display: block;
+  }
+  
+  .options01 li button {
+    width: 100%;
+    color: #212529;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .options01 li button:hover {
+    background-color: #f1f1f1;
+    color: #6c5ce7;
+  }
+  
+  /* Container styling */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .guide h1 {
+    color: #6c5ce7;
+    margin-bottom: 15px;
+  }
+  
+  .guide h2 {
+    color: #5649c0;
+    margin: 20px 0 10px 0;
+  }
+  
+  .guide h4 {
+    color: rgb(255, 145, 0);
+    text-align: center;
+    padding: 10px;
+    background-color: #fff8e6;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  .guide p {
+    margin-bottom: 15px;
+  }
+  
+  .guide ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .guide li {
+    margin-bottom: 10px;
+  }
+  
+  .guide a {
+    color: #6c5ce7;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s;
+    font-weight: 500;
+  }
+  
+  .guide a:hover {
+    color: #5649c0;
+    text-decoration: underline;
+  }
+  
+  code {
+    background-color: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+  }
+  
+  .pointer {
+    background-color: #ff9100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 145, 0, 0.3);
+  }
+  
+  .pointer:hover {
+    background-color: #e67e00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 145, 0, 0.4);
+  }
+</style>
+
+<h1 class="tipografia">Tienda de productos</h1>
 <hr>
 <!-- Ícono del carrito -->
 {{!-- <a href="/carts">
@@ -10,32 +196,20 @@
     <div class="button-container01">
         <!-- Botón 1 -->
         <div class="button-wrapper01">
-            <button class="main-button01">Productos</button>
-            <ul class="options01">
-                <li><button onclick="window.open('api/products')">Code Version</button></li>
-                <li><button onclick="window.open('/products')">Live Version</button></li>
-            </ul>
+            <button class="main-button01" onclick="window.open('/products')">Productos</button>
         </div>
 
         <!-- Botón 2 -->
         <div class="button-wrapper01">
-            <button class="main-button01">Carrito</button>
-            <ul class="options01">
-                <li><button onclick="window.open('api/carts', '_blank')">Code Version</button></li>
-                <li><button onclick="window.open('/carts', '_blank')">Live Version</button></li>
-            </ul>
+            <button class="main-button01" onclick="window.open('/carts', '_blank')">Carrito</button>
         </div>
     </div>
 </div>
 
-
-
-
 <div class="container guide">
     <h1>Guía de Uso de la API de Productos</h1>
     <p>Bienvenido a la guía de uso de la API de Productos. Aquí encontrarás ejemplos de cómo utilizar los parámetros
-        de
-        consulta en tus solicitudes.</p>
+        de consulta en tus solicitudes.</p>
     <hr>
     <h2>Parámetros de Consulta</h2>
     <p>
@@ -73,51 +247,6 @@
     </ul>
     <hr>
     <br>
-    <h2>Pruebas con Postman</h2>
-    <hr>
-    <h4 style="color: rgb(255, 145, 0); text-align:center">Al hacer click en "Probar", se te pedirá permiso para
-        copiar el código automáticamente y
-        abrir Postman de
-        manera automática para que pegues el código y hagas la consulta!</h4>
-    <hr>
-    <br>
-    <div>
-        <p>**GET**: Obtener productos con un límite de 4 y ordenados de manera ascendente:</p>
-        <p>http://localhost:8080/api/products?limit=4&sort=asc</p>
-        <button class="pointer"
-            onclick="copyToClipboard('http://localhost:8080/api/products?limit=4&sort=asc')">PROBAR</button>
-    </div>
-    <br>
-    <div>
-        <p>**GET**: Obtener productos de la segunda página filtrados por categoría "Flying V":</p>
-        <p> http://localhost:8080/api/products?query=Flying </p>
-        <button class="pointer"
-            onclick="copyToClipboard('http://localhost:8080/api/products?query=Flying')">PROBAR</button>
-    </div>
-    <br>
-    <div>
-        <p>**GET**: Obtener un producto con un ID específico (por ejemplo, 66ca79275b2d4cd1e296903e):</p>
-        <p>http://localhost:8080/api/products/66ca79275b2d4cd1e296903e</p>
-        <button class="pointer"
-            onclick="copyToClipboard('http://localhost:8080/api/products/66ca79275b2d4cd1e296903e')">PROBAR</button>
-    </div>
-
-    <script>
-        function copyToClipboard(url) {
-            if (confirm("Estás a punto de copiar la URL de la consulta al portapapeles. ¿Desea continuar?")) {
-                navigator.clipboard.writeText(url).then(() => {
-                    alert(`La URL ha sido copiada al portapapeles.
-
-Ahora se abrirá Postman, recuerda el tipo de petición, pega y clickea 'SEND'`);
-
-                    // Open Postman
-                    window.location.href = 'postman://';
-                }).catch(err => {
-                    alert("Error al copiar al portapapeles: " + err);
-                });
-            }
-        }
-    </script>
 
     <script>
         function toggleOptions(id) {
@@ -131,6 +260,3 @@ Ahora se abrirá Postman, recuerda el tipo de petición, pega y clickea 'SEND'`)
     </script>
 
 </div>
-</body>
-
-</html>

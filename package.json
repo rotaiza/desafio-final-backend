@@ -2,14 +2,14 @@
     "name": "guitarstore-v3",
     "type": "module",
     "version": "1.0.0",
-    "description": "Tercer entrega del proyecto 'Guitar Store', para el curso de Backend en la academia CoderHouse.",
+    "description": "Tercer entrega del proyecto final CoderHouse Rocio Otaiza",
     "main": "index.js",
     "scripts": {
         "start":"node src/app.js",
         "dev": "node --watch src/app.js"
     },
     "keywords": [],
-    "author": "Carlos Sebastian Ludueña",
+    "author": "Rocio Otaiza",
     "license": "ISC",
     "dependencies": {
         "axios": "^1.7.5",
@@ -18,8 +18,5 @@
         "mongoose": "^8.1.1",
         "mongoose-paginate-v2": "^1.8.2",
         "socket.io": "^4.7.4"
-    },
-    "devDependencies": {
-        "nodemon": "^3.0.2"
     }
 }

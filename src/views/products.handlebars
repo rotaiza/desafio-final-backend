@@ -1,4 +1,4 @@
-<h1 class="tipografia">Products</h1>
+<h1 class="tipografia">Productos</h1>
 {{#if productos.length}}
 <ul>
     {{#each productos}}
@@ -36,15 +36,17 @@
 
 <hr>
 <div class="pagination-container">
-    {{#if hasPrevPage}}
-    <a href="/products?page={{prevPage}}" class="prev-page">Previous</a>
-    {{/if}}
-    {{#if hasNextPage}}
-    <a href="/products?page={{nextPage}}" class="next-page">Next</a>
-    {{/if}}
+    <div>
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}" class="prev-page">Anterior</a>
+        {{/if}}
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}" class="next-page">Siguiente</a>
+        {{/if}}
+    </div>
     <br>
     <div>
-        <p class="textPag">Page {{currentPage}} of {{totalPages}}</p>
+        <p class="textPag">Pagina {{currentPage}} of {{totalPages}}</p>
     </div>
 </div>
 
